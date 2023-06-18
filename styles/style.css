@@ -1,0 +1,129 @@
+/* import font dari google font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+/* Yang pertama, tetapkan tipe font ‘sans-serif’ sebagai font yang digunakan pada seluruh elemen yang ada di dalam <body>. */
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+main {
+  padding: 20px;
+
+  display: flex;
+  gap: 1.5rem;
+}
+#content {
+  flex: 5;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
+}
+
+.jumbotron {
+  padding: 60px;
+  background-color: #00c8eb;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+nav ul {
+  padding-inline: 4rem;
+  display: flex;
+  gap: 2rem;
+}
+
+nav li {
+  list-style-type: none;
+}
+nav {
+  background-color: #00a2c6;
+  padding: 5px;
+  position: sticky;
+  top: 0;
+}
+nav a {
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+}
+/* Langkah pertama kita atur ukuran font menjadi 18px pada teks yang berada di elemen <a> yang merupakan turunan dari elemen <nav>. Silakan tambahkan rule dibawah ini. 
+   Kemudian kita atur juga ketebalan teksnya menjadi 400 dan hilangkan garis bawah pada elemen tersebut sehingga block rule-nya menjadi seperti ini:
+*/
+nav a {
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+/* Selain itu, kita juga bisa memberikan efek tebal pada teks ketika salah satu item navigasi disorot menggunakan kursor. Tambahkan rule baru dengan memanfaatkan pseudo-class :hover pada elemen <a>. */
+nav a:hover {
+  font-weight: bold;
+}
+.featured-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+header {
+  display: inline;
+}
+/* Setelah itu, kita dapat menentukan selector dengan mudah untuk mengatur <header> pada elemen <article> tersebut: */
+.profile header {
+  text-align: center;
+}
+/* Selanjutnya teks pada header aside akan kita buat menjadi rata tengah dengan menggunakan properti text-align. Sebelum itu, untuk memudahkan menetapkan selector, berikan attribute class pada elemen <article> yang berada di dalam elemen <aside> dengan nilai profile. */
+/* Maka teks pada header aside akan menjadi rata tengah. */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+}
+/* Yang kedua, kita tetapkan juga warna pada setiap elemen <h2> dan <h3> yang digunakan pada berkas HTML dengan menuliskan kode sebagai berikut: */
+h2,
+h3 {
+  color: #00a2c6;
+}
+
+.profile img {
+  width: 200px;
+}
+aside {
+  flex: 1;
+  /* flex merupakan shorthand dari tiga buah properti, flex-grow, flex-shrink, dan flex-basis*/
+}
+/* Dan yang terakhir, kita coba ubah warna background dan warna teks pada elemen <footer>, serta beri sebuah padding */
+footer {
+  padding: 20px;
+  color: white;
+  background-color: #00a2c6;
+  text-align: center;
+  font-weight: bold;
+}
+/* Terakhir, kita buat juga teks pada footer menjadi rata tengah dan tebal dengan menambahkan properti text-align: center; dan font-weight: bold; pada footer selector: */
+/* Sehingga keseluruhan kode pada berkas style.css akan nampak seperti ini: */
+
+/* Rule yang dituliskan dalam block @media di bawah akan diterapkan pada device yang memiliki ukuran viewport di bawah 992px */
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+  main aside {
+    align-self: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+  main aside {
+    align-self: stretch;
+  }
+}
